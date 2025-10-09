@@ -5,7 +5,7 @@ demand a password to unencrypt them. This was made as a small fun project to pas
 
 ## Compiling
 
-All you need is clang, gtk and an unix system. Typing `make` will compile it, then
+All you need is gcc, gtk, pkg-config, and an unix system. Typing `make` will compile it, then
 `make run` to run it. A backup of the source gets created in the
 `/tmp/RANSOM_BACKUP` directory.
 
